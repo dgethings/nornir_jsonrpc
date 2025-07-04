@@ -1,10 +1,8 @@
 from typing import Any
 
 import httpx
-from pydantic import BaseModel
-
 from nornir.core.configuration import Config
-
+from pydantic import BaseModel
 
 CONNECTION_NAME = "JSONRPC"
 
