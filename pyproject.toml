@@ -1,0 +1,19 @@
+[project]
+name = "nornir-jspnrpc"
+version = "0.1.0"
+description = "Nornir connection plugin for the JSON RPC protocol"
+readme = "README.md"
+authors = [{ name = "David Gethings", email = "dgethings@me.com" }]
+requires-python = ">=3.13"
+dependencies = [
+    "httpx>=0.28.1",
+ "nornir>=3.5.0",
+ "pydantic>=2.10.6",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = ["pytest>=8.3.5", "pytest-httpx>=0.35.0"]
