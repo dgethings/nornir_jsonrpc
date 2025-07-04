@@ -1,6 +1,7 @@
 from typing import Any
 
 import httpx
+from pydantic import BaseModel
 
 from nornir.core.configuration import Config
 
@@ -8,12 +9,12 @@ from nornir.core.configuration import Config
 CONNECTION_NAME = "JSONRPC"
 
 
-class JSONRPC:
+class JSONRPC(BaseModel):
     def open(
         self,
-        hostname: str | None,
-        username: str | None = "admin",
-        password: str | None = "NokiaSrl1!",
+        hostname: str,
+        username: str,
+        password: str,
         port: int = 433,
         platform: str | None = None,
         extras: dict[str, Any] | None = None,
