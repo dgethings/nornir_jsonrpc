@@ -13,6 +13,7 @@ jobs:
       contents: write # To create releases and push tags
       issues: write # To create release notes
       pull-requests: write # To create release notes
+      id-token: write
 
     steps:
       - name: Checkout
