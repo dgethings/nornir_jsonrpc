@@ -25,3 +25,5 @@ jobs:
         with:
           no_operation_mode: true
           verbosity: 2
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          change_log: true
