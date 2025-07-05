@@ -23,4 +23,4 @@ jobs:
       - name: Python Semantic Release
         uses: "python-semantic-release/python-semantic-release@v10.2.0"
         with:
-          root_options: "-v --noop version"
+          no_operation_mode: true
