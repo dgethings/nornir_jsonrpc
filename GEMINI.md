@@ -56,6 +56,7 @@ This project uses `uv` to manage the Python version, dependencies, run tests, bu
 
 ## Python PEPs used in this project
 
-There are several standards Python defines (in PEPs). The following PEPs are used in this project:
+There are several standards Python defines (in PEPs). The following PEPs and other Python standards are used in this project:
 
 * <https://packaging.python.org/en/latest/specifications/dependency-groups/#dependency-groups>
+* <https://peps.python.org/pep-0621/>
