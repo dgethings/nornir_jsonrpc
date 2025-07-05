@@ -8,6 +8,10 @@ CONNECTION_NAME = "JSONRPC"
 
 
 class JSONRPC(BaseModel):
+    """
+    JSONRPC connection plugin for Nornir.
+    """
+
     def open(
         self,
         hostname: str,
@@ -18,6 +22,18 @@ class JSONRPC(BaseModel):
         extras: dict[str, Any] | None = None,
         configuration: Config | None = None,
     ) -> None:
+        """
+        Opens a connection to the device.
+
+        Args:
+            hostname: The hostname or IP address of the device.
+            username: The username to use for authentication.
+            password: The password to use for authentication.
+            port: The port to use for the connection. Defaults to 433.
+            platform: The platform of the device. Not used by this connection plugin.
+            extras: Additional parameters for the connection.
+            configuration: The Nornir configuration. Not used by this connection plugin.
+        """
         if (
             extras
             and "connection" in extras
@@ -32,4 +48,7 @@ class JSONRPC(BaseModel):
             )
 
     def close(self) -> None:
+        """
+        Closes the connection to the device.
+        """
         self.connection.close()
