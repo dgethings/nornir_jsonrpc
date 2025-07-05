@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.2.6 (2025-07-05)
+
+### Bug Fixes
+
+- Try different action
+  ([`8a7cde1`](https://github.com/dgethings/nornir_jsonrpc/commit/8a7cde1f09d3d7aa5a2b3e33d5a9e7eb31765632))
+
+
 ## v0.2.5 (2025-07-05)
 
 ### Bug Fixes

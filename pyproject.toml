@@ -1,6 +1,6 @@
 [project]
 name = "nornir-jsonrpc"
-version = "0.2.5"
+version = "0.2.6"
 description = "Nornir connection plugin for the JSON RPC protocol"
 readme = "README.md"
 authors = [{ name = "David Gethings", email = "dgethings@me.com" }]
