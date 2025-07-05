@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.2.12 (2025-07-05)
+
+### Bug Fixes
+
+- Try again
+  ([`5c52f68`](https://github.com/dgethings/nornir_jsonrpc/commit/5c52f688c2825fb360a2136cf9cb656c0f8ae2f6))
+
+
 ## v0.2.11 (2025-07-05)
 
 ### Bug Fixes
