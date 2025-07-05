@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.2.8 (2025-07-05)
+
+### Bug Fixes
+
+- Let's see if this works
+  ([`f54ff90`](https://github.com/dgethings/nornir_jsonrpc/commit/f54ff90abf02339c338e0c56910ba4dbf1e63a1e))
+
+
 ## v0.2.7 (2025-07-05)
 
 ### Bug Fixes
