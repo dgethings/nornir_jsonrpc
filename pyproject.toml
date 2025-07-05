@@ -4,12 +4,30 @@ version = "0.1.0"
 description = "Nornir connection plugin for the JSON RPC protocol"
 readme = "README.md"
 authors = [{ name = "David Gethings", email = "dgethings@me.com" }]
-requires-python = ">=3.13"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+keywords = ["nornir", "jsonrpc"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Framework :: Pydantic :: 2",
+  "Framework :: Pytest",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Topic :: System :: Networking",
+  "Typing :: Typed"
+]
 dependencies = [
     "httpx>=0.28.1",
  "nornir>=3.5.0",
  "pydantic>=2.10.6",
 ]
+[project.urls]
+Repository = "https://github.com/dgethings/nornir_jsonrpc/"
 
 [build-system]
 requires = ["hatchling"]
