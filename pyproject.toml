@@ -4,13 +4,12 @@ version = "0.1.0"
 description = "Nornir connection plugin for the JSON RPC protocol"
 readme = "README.md"
 authors = [{ name = "David Gethings", email = "dgethings@me.com" }]
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 license = { file = "LICENSE" }
 keywords = ["nornir", "jsonrpc"]
 classifiers = [
   "Development Status :: 4 - Beta",
   "Intended Audience :: Developers",
-  "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
@@ -30,10 +29,8 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [dependency-groups]
+release = ["python-semantic-release>=10.2.0"]
 dev = ["pytest>=8.3.5", "pytest-httpx>=0.35.0", "ruff"]
-release = [
-    "python-semantic-release>=10.2.0",
-]
 [project.optional-dependencies]
 build = ["uv ~= 0.7.19"]
 
@@ -93,8 +90,27 @@ default = "semantic-release <semantic-release>"
 [tool.semantic_release.commit_parser_options]
 minor_tags = ["feat"]
 patch_tags = ["fix", "perf"]
-other_allowed_tags = ["build", "chore", "ci", "docs", "style", "refactor", "test"]
-allowed_tags = ["feat", "fix", "perf", "build", "chore", "ci", "docs", "style", "refactor", "test"]
+other_allowed_tags = [
+  "build",
+  "chore",
+  "ci",
+  "docs",
+  "style",
+  "refactor",
+  "test",
+]
+allowed_tags = [
+  "feat",
+  "fix",
+  "perf",
+  "build",
+  "chore",
+  "ci",
+  "docs",
+  "style",
+  "refactor",
+  "test",
+]
 default_bump_level = 0
 parse_squash_commits = true
 ignore_merge_commits = true
@@ -108,4 +124,3 @@ insecure = false
 [tool.semantic_release.publish]
 dist_glob_patterns = ["dist/*"]
 upload_to_vcs_release = true
-
