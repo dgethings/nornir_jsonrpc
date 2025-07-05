@@ -36,15 +36,14 @@ uv add nornir-jsonrpc
 
 ```python
 from nornir import InitNornir
-from nornir_jsonrpc.tasks import jsonrpc_call
+from nornir_jsonrpc.tasks import jsonrpc_cli
 from nornir_utils.plugins.functions import print_result
 
 nr = InitNornir(config_file="config.yaml")
 
 result = nr.run(
-    task=jsonrpc_call,
-    method="show version",
-    params={},
+    task=jsonrpc_cli,
+    cmds=["show version"],
 )
 
 print_result(result)
@@ -53,4 +52,3 @@ print_result(result)
 ## License
 
 [MIT](LICENSE)
-
