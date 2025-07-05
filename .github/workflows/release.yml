@@ -32,11 +32,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-          uv add --group release semantic-release python-semantic-release
+          uv add --group release python-semantic-release
 
       - name: Semantic Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }} # Uncomment and configure for PyPI publishing
         run: |
-          semantic-release publish
+          uv run semantic-release publish
