@@ -1,6 +1,6 @@
 from nornir.core.task import Result, Task
-from nornir_jspnrpc.connection import CONNECTION_NAME
-from nornir_jspnrpc.types import (
+from nornir_jsonrpc.connection import CONNECTION_NAME
+from nornir_jsonrpc.types import (
     RPCBaseModel,
     Response,
     CLIRPC,

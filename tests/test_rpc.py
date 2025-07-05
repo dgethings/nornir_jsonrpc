@@ -1,4 +1,3 @@
-
 from http import HTTPStatus
 from unittest.mock import MagicMock
 
@@ -6,7 +5,7 @@ import httpx
 import pytest
 from nornir.core.task import Result, Task
 
-from nornir_jspnrpc.tasks import (
+from nornir_jsonrpc.tasks import (
     jsonrpc_cli,
     jsonrpc_delete_config,
     jsonrpc_get,
@@ -14,7 +13,7 @@ from nornir_jspnrpc.tasks import (
     jsonrpc_set,
     jsonrpc_update_config,
 )
-from nornir_jspnrpc.types import Action, SetCommand
+from nornir_jsonrpc.types import Action, SetCommand
 
 
 @pytest.fixture
