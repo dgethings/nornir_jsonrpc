@@ -53,3 +53,9 @@ This project uses `uv` to manage the Python version, dependencies, run tests, bu
 * You can use existing third-party dependencies but only suggest new ones if there is a strong reason to do so
 * All classes, methods and functions must have Google style docstrings
 * Do not modify files in the `dist/` directory; they are auto-generated during the release process.
+
+## Python PEPs used in this project
+
+There are several standards Python defines (in PEPs). The following PEPs are used in this project:
+
+* <https://packaging.python.org/en/latest/specifications/dependency-groups/#dependency-groups>
