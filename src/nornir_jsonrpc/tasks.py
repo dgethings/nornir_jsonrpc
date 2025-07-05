@@ -42,6 +42,16 @@ def _send_rpc(request: RPCBaseModel, task: Task) -> Result:
 
 
 def jsonrpc_cli(task: Task, cmds: list[str]) -> Result:
+    """
+    Runs a list of commands on the device.
+
+    Args:
+        task: The Nornir task.
+        cmds: A list of commands to run.
+
+    Returns:
+        A Nornir Result object.
+    """
     global req_id
     return _send_rpc(
         request=CLIRPC(id=req_id, params=CLIParams(commands=cmds)), task=task
@@ -49,6 +59,16 @@ def jsonrpc_cli(task: Task, cmds: list[str]) -> Result:
 
 
 def jsonrpc_get(task: Task, paths: Iterable[Union[str, GetCommand]]) -> Result:
+    """
+    Retrieves data from the device.
+
+    Args:
+        task: The Nornir task.
+        paths: An iterable of paths or GetCommand objects.
+
+    Returns:
+        A Nornir Result object.
+    """
     global req_id
     cmds = [GetCommand(path=p) for p in paths if isinstance(p, str)]
     return _send_rpc(
@@ -57,6 +77,16 @@ def jsonrpc_get(task: Task, paths: Iterable[Union[str, GetCommand]]) -> Result:
 
 
 def jsonrpc_set(task: Task, cmds: Iterable[SetCommand]) -> Result:
+    """
+    Sets data on the device.
+
+    Args:
+        task: The Nornir task.
+        cmds: An iterable of SetCommand objects.
+
+    Returns:
+        A Nornir Result object.
+    """
     global req_id
     return _send_rpc(
         request=SetRPC(id=req_id, params=SetParams(commands=cmds)), task=task
@@ -66,6 +96,17 @@ def jsonrpc_set(task: Task, cmds: Iterable[SetCommand]) -> Result:
 def jsonrpc_update_config(
     task: Task, path: str, value: BaseModel | None = None
 ) -> Result:
+    """
+    Updates the configuration at a specific path.
+
+    Args:
+        task: The Nornir task.
+        path: The path to update.
+        value: The value to update the path with.
+
+    Returns:
+        A Nornir Result object.
+    """
     global req_id
     cmd = SetCommand(
         action=Action.UPDATE,
@@ -81,6 +122,17 @@ def jsonrpc_update_config(
 def jsonrpc_replace_config(
     task: Task, path: str, value: BaseModel | None = None
 ) -> Result:
+    """
+    Replaces the configuration at a specific path.
+
+    Args:
+        task: The Nornir task.
+        path: The path to replace.
+        value: The value to replace the path with.
+
+    Returns:
+        A Nornir Result object.
+    """
     global req_id
     cmd = SetCommand(
         action=Action.REPLACE,
@@ -96,6 +148,17 @@ def jsonrpc_replace_config(
 def jsonrpc_delete_config(
     task: Task, path: str, value: BaseModel | None = None
 ) -> Result:
+    """
+    Deletes the configuration at a specific path.
+
+    Args:
+        task: The Nornir task.
+        path: The path to delete.
+        value: The value to delete at the path.
+
+    Returns:
+        A Nornir Result object.
+    """
     global req_id
     cmd = SetCommand(
         action=Action.DELETE,
