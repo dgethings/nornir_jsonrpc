@@ -56,12 +56,33 @@ def test_jsonrpc_get(nornir_task: Task) -> None:
 
 def test_jsonrpc_get_mixed(nornir_task: Task) -> None:
     """Test the jsonrpc_get task with mixed paths."""
+    import json
+
     result = jsonrpc_get(
         nornir_task,
-        paths=["/system/information/version", GetCommand(path="/system/information/model-name")],
+        paths=[
+            "/system/information/version",
+            GetCommand(path="/system/information/model-name"),
+        ],
     )
     assert isinstance(result, Result)
     assert result.result == [{"basic system info": {"version": "v23.10.1"}}]
+
+    mock_connection = nornir_task.host.get_connection.return_value
+    mock_connection.post.assert_called_once()
+
+    # Get the content passed to post
+    _, kwargs = mock_connection.post.call_args
+    request_payload = json.loads(kwargs["content"])
+
+    # Assert payload structure and content, ignoring the dynamic 'id'
+    assert request_payload["jsonrpc"] == "2.0"
+    assert request_payload["method"] == "get"
+    expected_commands = [
+        {"path": "/system/information/version", "datastore": "running"},
+        {"path": "/system/information/model-name", "datastore": "running"},
+    ]
+    assert request_payload["params"]["commands"] == expected_commands
 
 
 def test_jsonrpc_set(nornir_task: Task) -> None:
