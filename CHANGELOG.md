@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.2.5 (2025-07-05)
+
+### Bug Fixes
+
+- Add worflow dispatch for testing
+  ([`fef7e90`](https://github.com/dgethings/nornir_jsonrpc/commit/fef7e907d265966c0b998ba373dce0d0b15fc77e))
+
+
 ## v0.2.4 (2025-07-05)
 
 ### Bug Fixes
