@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.2.7 (2025-07-05)
+
+### Bug Fixes
+
+- Try with artifact caching
+  ([`d0a872c`](https://github.com/dgethings/nornir_jsonrpc/commit/d0a872c4a90cf2771d16064152642f29a2113c1c))
+
+
 ## v0.2.6 (2025-07-05)
 
 ### Bug Fixes
