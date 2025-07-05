@@ -1,0 +1,37 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # To create releases and push tags
+      issues: write # To create release notes
+      pull-requests: write # To create release notes
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Required by semantic-release to get all commits
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13" # Use a recent Python version
+
+      - name: Install dependencies
+        run: |
+          uv add --group release semantic-release python-semantic-release
+
+      - name: Semantic Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }} # Uncomment and configure for PyPI publishing
+        run: |
+          semantic-release publish
