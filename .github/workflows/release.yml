@@ -20,23 +20,6 @@ jobs:
         with:
           fetch-depth: 0 # Required by semantic-release to get all commits
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.13" # Use a recent Python version
-
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
-        with:
-          version: "0.7.19"
-
-      - name: Install dependencies
-        run: |
-          uv add --group release python-semantic-release
-
-      - name: Semantic Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }} # Uncomment and configure for PyPI publishing
-        run: |
-          uv run semantic-release publish
+      - name: Python Semantic Release
+        uses: python-semantic-release/python-semantic-release@v10.2.0
+          root_ops: -v --noop version
