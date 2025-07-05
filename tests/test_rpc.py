@@ -13,7 +13,7 @@ from nornir_jsonrpc.tasks import (
     jsonrpc_set,
     jsonrpc_update_config,
 )
-from nornir_jsonrpc.types import Action, SetCommand
+from nornir_jsonrpc.types import Action, SetCommand, GetCommand
 
 
 @pytest.fixture
@@ -50,6 +50,16 @@ def test_jsonrpc_cli(nornir_task: Task) -> None:
 def test_jsonrpc_get(nornir_task: Task) -> None:
     """Test the jsonrpc_get task."""
     result = jsonrpc_get(nornir_task, paths=["/system/information/version"])
+    assert isinstance(result, Result)
+    assert result.result == [{"basic system info": {"version": "v23.10.1"}}]
+
+
+def test_jsonrpc_get_mixed(nornir_task: Task) -> None:
+    """Test the jsonrpc_get task with mixed paths."""
+    result = jsonrpc_get(
+        nornir_task,
+        paths=["/system/information/version", GetCommand(path="/system/information/model-name")],
+    )
     assert isinstance(result, Result)
     assert result.result == [{"basic system info": {"version": "v23.10.1"}}]
 

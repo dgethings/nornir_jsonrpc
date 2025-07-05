@@ -58,7 +58,7 @@ def jsonrpc_cli(task: Task, cmds: list[str]) -> Result:
 
 def jsonrpc_get(task: Task, paths: Iterable[Union[str, GetCommand]]) -> Result:
     """
-    Retrieves data from the device.
+    Retrierieves data from the device.
 
     Args:
         task: The Nornir task.
@@ -67,7 +67,7 @@ def jsonrpc_get(task: Task, paths: Iterable[Union[str, GetCommand]]) -> Result:
     Returns:
         A Nornir Result object.
     """
-    cmds = [GetCommand(path=p) for p in paths if isinstance(p, str)]
+    cmds = [p if isinstance(p, GetCommand) else GetCommand(path=p) for p in paths]
     return _send_rpc(
         request=GetRPC(id=next(_req_id_counter), params=GetParams(commands=cmds)), task=task
     )
