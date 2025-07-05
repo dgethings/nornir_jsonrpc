@@ -21,5 +21,6 @@ jobs:
           fetch-depth: 0 # Required by semantic-release to get all commits
 
       - name: Python Semantic Release
-        uses: python-semantic-release/python-semantic-release@v10.2.0
-          root_ops: -v --noop version
+        uses: "python-semantic-release/python-semantic-release@v10.2.0"
+        with:
+          root_options: "-v --noop version"
