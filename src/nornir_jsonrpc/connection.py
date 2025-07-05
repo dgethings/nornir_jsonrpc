@@ -17,7 +17,7 @@ class JSONRPC(BaseModel):
         hostname: str,
         username: str,
         password: str,
-        port: int = 433,
+        port: int = 443,
         platform: str | None = None,
         extras: dict[str, Any] | None = None,
         configuration: Config | None = None,
@@ -29,7 +29,7 @@ class JSONRPC(BaseModel):
             hostname: The hostname or IP address of the device.
             username: The username to use for authentication.
             password: The password to use for authentication.
-        port: The port to use for the connection. Defaults to 433 (note: standard HTTPS is 443).
+        port: The port to use for the connection. Defaults to 443 (note: standard HTTPS is 443).
             platform: The platform of the device. Not used by this connection plugin.
             extras: Additional parameters for the connection.
             configuration: The Nornir configuration. Not used by this connection plugin.
