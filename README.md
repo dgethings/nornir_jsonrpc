@@ -1,10 +1,9 @@
 # Nornir JSON RPC Plugin
-
-[![Build Status](https://github.com/dgethings/nornir_jsonrpc/workflows/CI/badge.svg)](https://github.com/dgethings/nornir_jsonrpc/actions)
+[![GitHub Actions](https://github.com/dgethings/nornir_jsonrpc/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/dgethings/nornir_jsonrpc/actions/)
 [![PyPI version](https://badge.fury.io/py/nornir-jsonrpc.svg)](https://badge.fury.io/py/nornir-jsonrpc)
 [![Python versions](https://img.shields.io/pypi/pyversions/nornir-jsonrpc.svg)](https://pypi.python.org/pypi/nornir-jsonrpc)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 ![Python Version from PEP 621 TOML](https://img.shields.io/python/required-version-toml?tomlFilePath=https%3A%2F%2Fraw.githubusercontent.com%2Fdgethings%2Fnornir_jsonrpc%2Frefs%2Fheads%2Fmain%2Fpyproject.toml)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/nornir-jsonrpc)](https://pypi.org/project/nornir-jsonrpc/)
 
 Nornir plugin for JSON-RPC.
 
